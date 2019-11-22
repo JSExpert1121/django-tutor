@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="border: 2px solid #000;">
+    <h1>This is the body</h1>
+    <p>Here is where you put stuff</p>
+
+    <p>{{text}}</p>
+
+    <ul>
+    {% for item in list %}
+        {% include "personal/snippets/body.snippets.html" with value=item valuex='hello' %}
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}
