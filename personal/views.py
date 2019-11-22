@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Question
 # Create your views here.
 
 
@@ -8,15 +8,11 @@ def homeview(request):
     landing page
     '''
     print(request.headers)
-    list_of_values = [
-        'first entry',
-        'second entry',
-        'third entry',
-        'forth entry'
-    ]
+
+    questions = Question.objects.all()
     context = {
         "text": 'This is from context',
-        'list': list_of_values
+        'questions': questions
     }
 
     return render(request, 'personal/home.html', context)

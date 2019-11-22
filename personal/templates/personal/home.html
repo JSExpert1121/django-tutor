@@ -8,11 +8,11 @@
 
     <p>{{text}}</p>
 
-    <ul>
-    {% for item in list %}
-        {% include "personal/snippets/body.snippets.html" with value=item valuex='hello' %}
+    <div>
+    {% for q in questions %}
+        {% include "personal/snippets/body.snippets.html" with value=q %}
     {% endfor %}
-    </ul>
+    </div>
 </div>
 
 {% endblock content %}
