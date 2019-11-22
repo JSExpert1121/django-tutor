@@ -9,8 +9,8 @@
     <p>{{text}}</p>
 
     <div>
-    {% for q in questions %}
-        {% include "personal/snippets/body.snippets.html" with value=q %}
+    {% for account in accounts %}
+        {% include "personal/snippets/body.snippets.html" with value=account %}
     {% endfor %}
     </div>
 </div>

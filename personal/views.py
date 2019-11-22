@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import Question
+from account.models import Account
+
 # Create your views here.
 
 
@@ -9,10 +10,9 @@ def homeview(request):
     '''
     print(request.headers)
 
-    questions = Question.objects.all()
+    users = Account.objects.all()
     context = {
-        "text": 'This is from context',
-        'questions': questions
+        "accounts": users
     }
 
     return render(request, 'personal/home.html', context)
