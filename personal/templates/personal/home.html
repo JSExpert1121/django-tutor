@@ -2,11 +2,8 @@
 
 {% block content %}
 
-<div style="border: 2px solid #000;">
-    <h1>This is the body</h1>
-    <p>Here is where you put stuff</p>
-
-    <p>{{text}}</p>
+<div>
+    <h3>Logged in user: {{request.user.username}}</h1>
 
     <div>
     {% for account in accounts %}
