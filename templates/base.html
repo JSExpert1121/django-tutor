@@ -5,29 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>This is the header</title>
+    <title>Blog site</title>
 
-    {% if request.user.is_authenticated %}
-        <p>Hello, {{request.user.username}} | 
-            <a href="{% url 'account' %}">Account</a> | 
-            <a href="{% url 'logout' %}">Logout</a></p>
-    {% else %}
-        <p><a href="{% url 'register' %}">Register</a> | <a href="{% url 'login' %}">Login</a></p>
-    {% endif %}
-
-    <hr>
 </head>
 
 <body>
     
-    {% block content %}
-    {% endblock %}
+   
+
+    <div class='d-flex flex-column vh-100'>
+        {% include 'account/snippets/header.html' %}
+        <div class='flex-grow-1'>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div>
+            {% include 'account/snippets/footer.html' %}
+        </div>
+    </div>
 
 </body>
-
-<footer>
-    <hr>
-    <h3>This is the footer</h3>
-</footer>
 
 </html>

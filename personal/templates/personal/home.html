@@ -2,14 +2,13 @@
 
 {% block content %}
 
-<div>
-    <h3>Logged in user: {{request.user.username}}</h1>
-
-    <div>
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h3 class="display-4">Registered users:</h3>
+</div>
+<div class='container'>
     {% for account in accounts %}
         {% include "personal/snippets/body.snippets.html" with value=account %}
     {% endfor %}
-    </div>
 </div>
 
 {% endblock content %}

@@ -64,7 +64,7 @@ def login_view(request):
 
 
 def account_view(request):
-    context = {}
+    context = {'success': False}
 
     user = request.user
     if not user.is_authenticated:
@@ -74,6 +74,11 @@ def account_view(request):
         form = AccountUpdateForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
+            form.initial = {
+                "email": request.POST['email'],
+                "username": request.POST['username']
+            }
+            context['success'] = True
     else:
         form = AccountUpdateForm(
             initial={
