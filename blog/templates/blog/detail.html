@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style type="text/css">
+    .create-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        margin: auto;
+    }
+
+    .submit-button {
+        max-width: 200px;
+    }
+</style>
+
+<div class="container">
+    <div class="card">
+        <div class="card-top-image">
+            <img src={{post.image.url}} alt={{post.title}} style="max-width: 100%;" />
+        </div>
+        <div class='card-body'>
+            <p class='card-title'>{{post.title}}</p>
+            <p class='card-body'>{{post.body}}</p>
+        </div>
+        <div class='card-footer'>
+            <p class='text-muted d-inline'>Updated at {{post.date_updated}}</p>
+            <p class='text-muted d-inline'>Posted by {{post.author}}</p>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

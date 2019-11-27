@@ -15,11 +15,12 @@
             <a href='{% url "blog:create" %}'>New Blog</a>
         </div>
         <div class='col-10 col-lg-7 offset-1 bg-white'>
-            <p>Hello world</p>
-            <p>Hello world</p>
-            <p>Hello world</p>
-            <p>Hello world</p>
-            <p>Hello world</p>
+            <ul>
+                {% for post in blogs %}
+                <li class='row'><a href="{% url 'blog:detail' post.slug %}">{{post.title}}</a></li>
+                {% endfor %}
+            </ul>
+
         </div>
         <div class='col-lg-3 d-none d-lg-block ml-3 bg-white'>
             <p>This is the right bar</p>
